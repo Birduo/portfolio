@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+        <title>Dylan Kneidel</title>
+    </head>
+    <body>
+        <div id="info">
+            Dylan Kneidel<br>
+            <div class="w3-container" style="text-align: center; text-decoration: none; display: inline-block;">
+                <button id="projectsButton" class="button button1 w3-button w3-hover-purple" onclick="toggleInfo('projects')">Projects</button>
+                <div id="projects" class="w3-dropdown-content w3-bar-block">
+                    <a href="https://github.com/Birduo/daisy" target="_blank" rel="noopener noreferrer">Daisy Programming Language</a>
+                    <br><br>
+                    <a href="https://github.com/Birduo/daisy-syntax" target="_blank" rel="noopener noreferrer">Daisy Language Syntax</a>
+                </div>
+            </div>
+
+            <div class="w3-container" style="text-align: center; text-decoration: none; display: inline-block;">
+                <button id="achievementsButton" class="button button1 w3-button w3-hover-purple" onclick="toggleInfo('achievements')">Achievements</button>
+                <div id="achievements" class="w3-dropdown-content w3-bar-block">
+                    <a href="https://www.nationalmerit.org/s/1758/start.aspx?gid=2&pgid=61" target="_blank" rel="noopener noreferrer">Commended National Merit Scholar</a>
+                    <br><br>
+                    <a href="https://www.congressionalappchallenge.us/21-KS03/" target="_blank" rel="noopener noreferrer">Congressional App Challenge Winner</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://threejs.org/build/three.js"></script>
+        <script>
+            function toggleInfo(n) {
+                let btns = document.getElementsByTagName("button")
+
+                let x = document.getElementById(n)
+
+                for (let i = 0; i < btns.length; i++) {
+                    let str = btns[i].id.replace("Button", "")
+                    if (str != n) {
+                        c = document.getElementById(str)
+                        if (c.className.indexOf("w3-show") != -1) {
+                            c.className = c.className.replace(" w3-show", "");
+                        }
+                    }
+                }
+                
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else { 
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+        </script>
+        <script src="index.js"></script>
+    </body>
+</html>
